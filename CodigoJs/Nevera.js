@@ -1,5 +1,5 @@
 class Nevera extends Electrodomestico{
-    constructor(){
+    constructor(capacidad,procedencia,consumo){
 
     }
 }
