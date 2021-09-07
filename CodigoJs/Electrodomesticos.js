@@ -1,7 +1,7 @@
 class Electrodomestico {
   constructor(consumo, procedencia) {
     this._consumo = consumo;
-    this._preocedencia = procedencia;
+    this._procedencia = procedencia;
   }
 
   get precio() {
@@ -20,9 +20,9 @@ class Electrodomestico {
       this._preocedencia =procedencia;
   }
 
-  calcularConsumo(tipoComsumo) {
+  calcularConsumo() {
     var precioConsumo;
-    switch (tipoComsumo) {
+    switch (this._consumo) {
       case A:
          precioConsumo = 450000; 
         break;
@@ -40,9 +40,9 @@ class Electrodomestico {
     return precioConsumo;
   }
 
-  calcularProcedencia(procedencia) {
+  calcularProcedencia() {
       var precioProcedencia;
-    switch (procedencia) {
+    switch (this._preocedencia) {
       case Nacional: precioProcedencia= 250000;
       break;
       case Internacional:
@@ -54,9 +54,14 @@ class Electrodomestico {
     return precioProcedencia;
   }
 
-  calcularprecio(procedencia,consumo) {
+  calcularprecio() {
 
-    var precioFinal = procedencia + consumo;
+    var precioProcedencia = this.calcularProcedencia(procedencia);
+    var precioConsumo = this.calcularConsumo(consumo);
+
+    var precioFinal = precioProcedencia + precioConsumo;
+
+    return precioFinal;
 
   }
 }
