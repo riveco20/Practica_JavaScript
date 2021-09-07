@@ -20,8 +20,9 @@ class Electrodomestico {
       this._preocedencia =procedencia;
   }
 
-  calcularConsumo() {
+  calcularConsumo(consumo) {
     var precioConsumo;
+    this._consumo=consumo;
     switch (this._consumo) {
       case A:
          precioConsumo = 450000; 
@@ -40,8 +41,9 @@ class Electrodomestico {
     return precioConsumo;
   }
 
-  calcularProcedencia() {
+  calcularProcedencia(procedencia) {
       var precioProcedencia;
+      this.procedencia=precioProcedencia;
     switch (this._preocedencia) {
       case Nacional: precioProcedencia= 250000;
       break;
@@ -54,7 +56,7 @@ class Electrodomestico {
     return precioProcedencia;
   }
 
-  calcularprecio() {
+  calcularprecio(procedencia,consumo) {
 
     var precioProcedencia = this.calcularProcedencia(procedencia);
     var precioConsumo = this.calcularConsumo(consumo);
